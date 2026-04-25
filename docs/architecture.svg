@@ -43,7 +43,7 @@
   <!-- Google Trends -->
   <g filter="url(#softShadow)">
     <rect x="40" y="120" width="230" height="90" rx="14" fill="url(#gradSource)" stroke="#FF6B35" stroke-width="1.5"/>
-    <text x="155" y="148" text-anchor="middle" font-size="14" font-weight="700" fill="#1A142E">🔍 Google Trends India</text>
+    <text x="155" y="148" text-anchor="middle" font-size="14" font-weight="700" fill="#1A142E">Google Trends India</text>
     <text x="155" y="168" text-anchor="middle" font-size="11" fill="#4A3F6B">Daily RSS · no auth</text>
     <text x="155" y="185" text-anchor="middle" font-size="10" fill="#6B6580" font-style="italic">Why: broadest India signal</text>
     <text x="155" y="200" text-anchor="middle" font-size="10" fill="#6B6580" font-style="italic">(search intent, non-urban-skewed)</text>
@@ -52,7 +52,7 @@
   <!-- News RSS -->
   <g filter="url(#softShadow)">
     <rect x="295" y="120" width="230" height="90" rx="14" fill="url(#gradSource)" stroke="#FF6B35" stroke-width="1.5"/>
-    <text x="410" y="148" text-anchor="middle" font-size="14" font-weight="700" fill="#1A142E">📰 Indian News (×7)</text>
+    <text x="410" y="148" text-anchor="middle" font-size="14" font-weight="700" fill="#1A142E">Indian News (×7)</text>
     <text x="410" y="168" text-anchor="middle" font-size="11" fill="#4A3F6B">The Hindu · NDTV · HT · IE · IT · BH · N18</text>
     <text x="410" y="185" text-anchor="middle" font-size="10" fill="#6B6580" font-style="italic">Why: recency + editorial judgment</text>
     <text x="410" y="200" text-anchor="middle" font-size="10" fill="#6B6580" font-style="italic">(parallel, per-feed 6s timeout)</text>
@@ -61,7 +61,7 @@
   <!-- Reddit -->
   <g filter="url(#softShadow)">
     <rect x="550" y="120" width="230" height="90" rx="14" fill="url(#gradSource)" stroke="#FF6B35" stroke-width="1.5"/>
-    <text x="665" y="148" text-anchor="middle" font-size="14" font-weight="700" fill="#1A142E">💬 Reddit r/india</text>
+    <text x="665" y="148" text-anchor="middle" font-size="14" font-weight="700" fill="#1A142E">Reddit r/india</text>
     <text x="665" y="168" text-anchor="middle" font-size="11" fill="#4A3F6B">hot.json · top 25</text>
     <text x="665" y="185" text-anchor="middle" font-size="10" fill="#6B6580" font-style="italic">Why: cultural pulse,</text>
     <text x="665" y="200" text-anchor="middle" font-size="10" fill="#6B6580" font-style="italic">corroboration signal</text>
