@@ -1,4 +1,4 @@
-# ShareChat Trends — APM Assignment
+# ShareChat Trends 
 
 A runtime system that surfaces what India is talking about *right now*, built for ShareChat's Hindi-first audience. Ranked trending tags with heat scores, categories, source transparency, and an AI-generated detail view.
 
