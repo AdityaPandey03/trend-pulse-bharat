@@ -197,7 +197,7 @@ See [`DEPLOY.md`](DEPLOY.md) for full Vercel deployment instructions.
 |---|---|
 | `GET /api/trends` | Ranked `TrendsResponse` with 15 trends. Cached 10 min. |
 | `GET /api/trends?debug=1` | Same, but with per-trend `scoreBreakdown`. |
-| `GET /api/trend-detail?slug=...` | AI-generated 3-bullet briefing + creator hashtags for a given trend. |
+| `POST /api/trend-detail` | AI-generated 3-bullet briefing + creator hashtags. Body: `{ slug, hashtagHi, hashtagEn, descriptionHi, descriptionEn, category }`. POST so the endpoint is independent of pipeline cache state. |
 
 ### Project structure
 

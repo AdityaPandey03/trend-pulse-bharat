@@ -55,12 +55,26 @@ export default function TrendDetailPage() {
     })();
   }, [slug]);
 
-  // Once we have the trend, load the AI detail
+  // Once we have the trend, load the AI detail.
+  // We POST the trend metadata so the endpoint doesn't depend on shared cache —
+  // serverless instances can't share the pipeline result by slug.
   useEffect(() => {
     if (!trend) return;
     (async () => {
       try {
-        const res = await fetch(`/api/trend-detail?slug=${encodeURIComponent(trend.slug)}`, { cache: 'no-store' });
+        const res = await fetch('/api/trend-detail', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            slug: trend.slug,
+            hashtagHi: trend.hashtagHi,
+            hashtagEn: trend.hashtagEn,
+            descriptionHi: trend.descriptionHi,
+            descriptionEn: trend.descriptionEn,
+            category: trend.category,
+          }),
+          cache: 'no-store',
+        });
         if (res.ok) {
           const json = (await res.json()) as DetailPayload;
           setDetail(json);

@@ -1,50 +1,58 @@
 import { NextResponse } from 'next/server';
 import Anthropic from '@anthropic-ai/sdk';
-import { runPipeline } from '@/lib/pipeline';
 
 /**
- * GET /api/trend-detail?slug=...
+ * POST /api/trend-detail
+ * Body: { slug, hashtagHi, hashtagEn, descriptionHi, descriptionEn, category }
  *
- * The "bonus" deliverable: when a user opens a trend, we generate
- * a richer detail card on the fly — a short Hindi summary of what
- * this trend is about (3 bullet points) + a suggested hashtag set
- * for creators.
+ * The "bonus" deliverable: when a user opens a trend, we generate a richer
+ * detail card on the fly — a short Hindi summary (3 bullets) + suggested
+ * creator hashtags + a CTA.
  *
- * Why on-the-fly: the feed response stays lightweight. Detail view
- * only pays the token cost when a user actually taps in. Good PM
- * instinct — don't bloat the hot path for content 90% of users
- * never see.
+ * Why we don't re-run the pipeline here:
+ * Vercel's serverless instances each have their own in-memory cache, AND
+ * Claude clustering is non-deterministic, so the slug from one /api/trends
+ * call isn't guaranteed to exist in another instance's pipeline run. We
+ * decoupled this endpoint by passing the trend metadata in the request body.
  */
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 export const maxDuration = 30;
 
-interface DetailResponse {
-  slug: string;
-  summaryHi: string[];   // 3 bullet points
-  creatorHashtags: string[];
-  callToAction: string;  // short Hindi CTA for creators
+interface DetailRequest {
+  slug?: string;
+  hashtagHi?: string;
+  hashtagEn?: string;
+  descriptionHi?: string;
+  descriptionEn?: string;
+  category?: string;
 }
 
-export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url);
-  const slug = searchParams.get('slug');
-  if (!slug) {
-    return NextResponse.json({ error: 'slug required' }, { status: 400 });
+interface DetailResponse {
+  slug: string;
+  summaryHi: string[];
+  creatorHashtags: string[];
+  callToAction: string;
+}
+
+export async function POST(request: Request) {
+  let body: DetailRequest;
+  try {
+    body = (await request.json()) as DetailRequest;
+  } catch {
+    return NextResponse.json({ error: 'invalid_json' }, { status: 400 });
+  }
+
+  const { slug, hashtagHi, hashtagEn, descriptionHi, descriptionEn, category } = body;
+  if (!slug || !hashtagHi || !descriptionEn) {
+    return NextResponse.json({ error: 'missing_fields' }, { status: 400 });
   }
 
   try {
-    const data = await runPipeline();
-    const trend = data.trends.find(t => t.slug === slug);
-    if (!trend) {
-      return NextResponse.json({ error: 'trend not found' }, { status: 404 });
-    }
-
     const apiKey = process.env.ANTHROPIC_API_KEY;
     if (!apiKey) {
-      // Graceful fallback: hand-crafted content so UI still shows something
-      return NextResponse.json(makeFallback(trend.hashtagHi, trend.descriptionHi));
+      return NextResponse.json(makeFallback(slug, hashtagHi, descriptionHi ?? descriptionEn));
     }
 
     const client = new Anthropic({ apiKey });
@@ -66,9 +74,9 @@ Rules:
 - Do NOT make up specific statistics or quotes.`;
 
     const userPrompt = `Trending topic:
-- Hashtag: ${trend.hashtagHi} (${trend.hashtagEn})
-- Category: ${trend.category}
-- What we know: ${trend.descriptionEn}
+- Hashtag: ${hashtagHi} (${hashtagEn ?? ''})
+- Category: ${category ?? 'general'}
+- What we know: ${descriptionEn}
 
 Produce the briefing.`;
 
@@ -85,7 +93,6 @@ Produce the briefing.`;
       .join('\n')
       .trim();
 
-    // Extract JSON defensively
     let parsed: Partial<DetailResponse> & { summaryHi?: unknown; creatorHashtags?: unknown; callToAction?: unknown };
     try {
       parsed = JSON.parse(text);
@@ -104,23 +111,21 @@ Produce the briefing.`;
     const callToAction = typeof parsed.callToAction === 'string' ? parsed.callToAction : '';
 
     if (summaryHi.length === 0) {
-      return NextResponse.json(makeFallback(trend.hashtagHi, trend.descriptionHi));
+      return NextResponse.json(makeFallback(slug, hashtagHi, descriptionHi ?? descriptionEn));
     }
 
     const result: DetailResponse = { slug, summaryHi, creatorHashtags, callToAction };
-    return NextResponse.json(result, {
-      headers: { 'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600' },
-    });
+    return NextResponse.json(result);
   } catch (err) {
     const message = err instanceof Error ? err.message : 'unknown';
     console.error('[trend-detail] failed:', message);
-    return NextResponse.json({ error: 'detail_failed', message }, { status: 500 });
+    return NextResponse.json(makeFallback(slug, hashtagHi, descriptionHi ?? descriptionEn));
   }
 }
 
-function makeFallback(hashtagHi: string, descHi: string): DetailResponse {
+function makeFallback(slug: string, hashtagHi: string, descHi: string): DetailResponse {
   return {
-    slug: '',
+    slug,
     summaryHi: [
       descHi,
       'यह ट्रेंड आज सोशल मीडिया पर तेज़ी से फैल रहा है।',

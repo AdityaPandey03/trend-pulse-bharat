@@ -11,3 +11,6 @@ next-env.d.ts
 # ShareChat's assignment PDF — kept locally for reference, not in the public repo
 APM Assignment __ ShareChat.pdf
 
+# tsc incremental build artefact
+tsconfig.tsbuildinfo
+
