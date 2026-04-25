@@ -2,7 +2,7 @@
 
 A runtime system that surfaces what India is talking about *right now*, built for ShareChat's Hindi-first audience. Ranked trending tags with heat scores, categories, source transparency, and an AI-generated detail view.
 
-![CI](https://github.com/AdityaPandey03/sharechat-trending/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/AdityaPandey03/trend-pulse-bharat/actions/workflows/ci.yml/badge.svg)
 
 ![UI preview](docs/ui-preview.png)
 
