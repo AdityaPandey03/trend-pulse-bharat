@@ -4,7 +4,11 @@ A runtime system that surfaces what India is talking about *right now*, built fo
 
 ![CI](https://github.com/AdityaPandey03/trend-pulse-bharat/actions/workflows/ci.yml/badge.svg)
 
-![UI preview](docs/ui-preview.png)
+<p align="center">
+  <img src="docs/ui-preview.png" alt="Feed view" width="320" />
+  &nbsp;&nbsp;
+  <img src="docs/ui-preview-detail.png" alt="Trend detail with AI briefing" width="320" />
+</p>
 
 > 🔗 **Live demo:** https://trend-pulse-bharat.vercel.app
 > 🎥 **Loom walkthrough:** `<YOUR_LOOM_URL>`
