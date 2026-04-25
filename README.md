@@ -6,7 +6,7 @@ A runtime system that surfaces what India is talking about *right now*, built fo
 
 ![UI preview](docs/ui-preview.png)
 
-> 🔗 **Live demo:** `<YOUR_VERCEL_URL>`
+> 🔗 **Live demo:** https://trend-pulse-bharat.vercel.app
 > 🎥 **Loom walkthrough:** `<YOUR_LOOM_URL>`
 > 📸 **Sample output:** [`docs/sample-response.json`](docs/sample-response.json) (backup in case prototype is down)
 > 📐 **Architecture diagram:** [`docs/architecture.svg`](docs/architecture.svg)
