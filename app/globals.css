@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hindi support — Noto Sans Devanagari loaded from Google Fonts (see layout.tsx) */
+
+:root {
+  --sc-bg-grad: radial-gradient(
+    ellipse at top,
+    rgba(229, 38, 75, 0.18) 0%,
+    rgba(255, 107, 53, 0.08) 30%,
+    #0F0B1F 70%
+  );
+}
+
+html, body {
+  background: #0F0B1F;
+  color: #F5F1FF;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  /* Mobile-native: prevent zoom on input, hide overscroll glow */
+  overscroll-behavior-y: contain;
+}
+
+body {
+  background: var(--sc-bg-grad) fixed;
+}
+
+/* Hindi-aware text — uses Noto Sans Devanagari when Devanagari codepoints present */
+.font-hindi {
+  font-family: 'Noto Sans Devanagari', system-ui, sans-serif;
+  font-feature-settings: 'kern' 1;
+}
+
+/* Smooth scroll for mobile */
+* { -webkit-overflow-scrolling: touch; }
+
+/* Hide scrollbars on horizontal scrollers */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+
+/* Shimmer loader */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, #1A142E 0%, #2A1F4A 50%, #1A142E 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+
+/* Tap ripple feel — press-in on tap */
+.tap-press {
+  transition: transform 120ms cubic-bezier(.4,0,.2,1);
+  -webkit-tap-highlight-color: transparent;
+}
+.tap-press:active { transform: scale(0.975); }
+
+/* Heat bar animated gradient fill */
+@keyframes heat-glow {
+  0%, 100% { filter: brightness(1); }
+  50%      { filter: brightness(1.15); }
+}
+.heat-fill {
+  background: linear-gradient(90deg, #FFB800 0%, #FF4D4D 50%, #C1275C 100%);
+  animation: heat-glow 2.4s ease-in-out infinite;
+}
+
+/* Subtle floating orb behind hero card for visual depth */
+.hero-orb {
+  background: radial-gradient(circle, rgba(229,38,75,0.45) 0%, transparent 65%);
+  filter: blur(40px);
+}
+
+/* Safe-area padding for notched devices */
+.pt-safe { padding-top: max(env(safe-area-inset-top), 16px); }
+.pb-safe { padding-bottom: max(env(safe-area-inset-bottom), 16px); }
+
+/* Pull-to-refresh hint */
+@keyframes bounce-down {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50%      { transform: translateY(4px); opacity: 1; }
+}
+.pull-hint { animation: bounce-down 1.8s ease-in-out infinite; }

@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+.env
+.env.local
+.DS_Store
+*.log
+.vercel
+next-env.d.ts
+
+# ShareChat's assignment PDF — kept locally for reference, not in the public repo
+APM Assignment __ ShareChat.pdf
+

@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 1020" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <defs>
+    <linearGradient id="gradSource" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF5F1"/>
+      <stop offset="100%" stop-color="#FFE5D9"/>
+    </linearGradient>
+    <linearGradient id="gradProcess" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5F0FF"/>
+      <stop offset="100%" stop-color="#E9DFFF"/>
+    </linearGradient>
+    <linearGradient id="gradLLM" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E5264B"/>
+      <stop offset="100%" stop-color="#FF6B35"/>
+    </linearGradient>
+    <linearGradient id="gradOutput" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E8F9EE"/>
+      <stop offset="100%" stop-color="#CFF2DC"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4A3F6B"/>
+    </marker>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1A142E" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="1020" fill="#FAFAFB"/>
+
+  <!-- Title -->
+  <text x="410" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#1A142E">
+    ShareChat Trending Tags · Pipeline Architecture
+  </text>
+  <text x="410" y="62" text-anchor="middle" font-size="12" fill="#6B6580">
+    Free, India-native sources → one batched LLM call → transparent scoring → diversified feed
+  </text>
+
+  <!-- ===== STAGE 1: SOURCES ===== -->
+  <text x="40" y="105" font-size="11" font-weight="700" fill="#8B80A8" letter-spacing="2">
+    STAGE 1 · SOURCES
+  </text>
+
+  <!-- Google Trends -->
+  <g filter="url(#softShadow)">
+    <rect x="40" y="120" width="230" height="90" rx="14" fill="url(#gradSource)" stroke="#FF6B35" stroke-width="1.5"/>
+    <text x="155" y="148" text-anchor="middle" font-size="14" font-weight="700" fill="#1A142E">🔍 Google Trends India</text>
+    <text x="155" y="168" text-anchor="middle" font-size="11" fill="#4A3F6B">Daily RSS · no auth</text>
+    <text x="155" y="185" text-anchor="middle" font-size="10" fill="#6B6580" font-style="italic">Why: broadest India signal</text>
+    <text x="155" y="200" text-anchor="middle" font-size="10" fill="#6B6580" font-style="italic">(search intent, non-urban-skewed)</text>
+  </g>
+
+  <!-- News RSS -->
+  <g filter="url(#softShadow)">
+    <rect x="295" y="120" width="230" height="90" rx="14" fill="url(#gradSource)" stroke="#FF6B35" stroke-width="1.5"/>
+    <text x="410" y="148" text-anchor="middle" font-size="14" font-weight="700" fill="#1A142E">📰 Indian News (×7)</text>
+    <text x="410" y="168" text-anchor="middle" font-size="11" fill="#4A3F6B">The Hindu · NDTV · HT · IE · IT · BH · N18</text>
+    <text x="410" y="185" text-anchor="middle" font-size="10" fill="#6B6580" font-style="italic">Why: recency + editorial judgment</text>
+    <text x="410" y="200" text-anchor="middle" font-size="10" fill="#6B6580" font-style="italic">(parallel, per-feed 6s timeout)</text>
+  </g>
+
+  <!-- Reddit -->
+  <g filter="url(#softShadow)">
+    <rect x="550" y="120" width="230" height="90" rx="14" fill="url(#gradSource)" stroke="#FF6B35" stroke-width="1.5"/>
+    <text x="665" y="148" text-anchor="middle" font-size="14" font-weight="700" fill="#1A142E">💬 Reddit r/india</text>
+    <text x="665" y="168" text-anchor="middle" font-size="11" fill="#4A3F6B">hot.json · top 25</text>
+    <text x="665" y="185" text-anchor="middle" font-size="10" fill="#6B6580" font-style="italic">Why: cultural pulse,</text>
+    <text x="665" y="200" text-anchor="middle" font-size="10" fill="#6B6580" font-style="italic">corroboration signal</text>
+  </g>
+
+  <!-- Skipped note -->
+  <text x="40" y="240" font-size="10" fill="#A0627A" font-style="italic">
+    ✗ Deliberately skipped: Twitter/X (urban-English skew), YouTube (music noise), IG/TikTok (no API).
+  </text>
+
+  <!-- Arrows down to normalize -->
+  <line x1="155" y1="215" x2="380" y2="270" stroke="#4A3F6B" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="410" y1="215" x2="410" y2="270" stroke="#4A3F6B" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="665" y1="215" x2="440" y2="270" stroke="#4A3F6B" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ===== STAGE 2: NORMALIZE ===== -->
+  <text x="40" y="295" font-size="11" font-weight="700" fill="#8B80A8" letter-spacing="2">
+    STAGE 2 · NORMALIZE &amp; CAP
+  </text>
+  <g filter="url(#softShadow)">
+    <rect x="160" y="310" width="500" height="64" rx="14" fill="url(#gradProcess)" stroke="#8B74E8" stroke-width="1.5"/>
+    <text x="410" y="335" text-anchor="middle" font-size="13" font-weight="700" fill="#1A142E">
+      Normalize → RawTrend shape · Per-source cap (20 / 18 / 10)
+    </text>
+    <text x="410" y="355" text-anchor="middle" font-size="10" fill="#6B6580" font-style="italic">
+      Promise.allSettled · any single source failing is non-fatal · ~45 candidates to LLM
+    </text>
+  </g>
+
+  <line x1="410" y1="378" x2="410" y2="420" stroke="#4A3F6B" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ===== STAGE 3: LLM ===== -->
+  <text x="40" y="435" font-size="11" font-weight="700" fill="#8B80A8" letter-spacing="2">
+    STAGE 3 · ONE BATCHED LLM CALL
+  </text>
+  <g filter="url(#softShadow)">
+    <rect x="100" y="450" width="620" height="130" rx="16" fill="url(#gradLLM)"/>
+    <text x="410" y="482" text-anchor="middle" font-size="16" font-weight="800" fill="#FFFFFF">
+      Claude Haiku 4.5
+    </text>
+    <text x="410" y="502" text-anchor="middle" font-size="11" fill="#FFE8E0">
+      cluster duplicates · categorize (10 pillars) · Hindi hashtag · 1-line Hindi desc · India-relevance · safety filter
+    </text>
+    <line x1="120" y1="514" x2="700" y2="514" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.3"/>
+    <text x="410" y="535" text-anchor="middle" font-size="10" fill="#FFE8E0" font-style="italic">
+      Why one call, not four: ~10× cheaper · lower latency · model reasons better with all candidates in view
+    </text>
+    <text x="410" y="555" text-anchor="middle" font-size="10" fill="#FFE8E0" font-style="italic">
+      Why Haiku, not Sonnet: this is structured extraction, not reasoning · &gt;95% reliability at 1/15th cost
+    </text>
+    <text x="410" y="572" text-anchor="middle" font-size="10" fill="#FFF" font-weight="700">
+      ≈ $0.001 per pipeline run
+    </text>
+  </g>
+
+  <line x1="410" y1="584" x2="410" y2="625" stroke="#4A3F6B" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ===== STAGE 4: SCORE ===== -->
+  <text x="40" y="640" font-size="11" font-weight="700" fill="#8B80A8" letter-spacing="2">
+    STAGE 4 · TRANSPARENT HEAT SCORE
+  </text>
+  <g filter="url(#softShadow)">
+    <rect x="60" y="655" width="700" height="110" rx="14" fill="url(#gradProcess)" stroke="#8B74E8" stroke-width="1.5"/>
+    <text x="410" y="680" text-anchor="middle" font-size="13" font-weight="700" fill="#1A142E">
+      heat = 100 × weighted sum (every component auditable via ?debug=1)
+    </text>
+
+    <g font-size="10" fill="#1A142E">
+      <rect x="85" y="698" width="130" height="52" rx="8" fill="#FFFFFF" stroke="#D6CFE8"/>
+      <text x="150" y="715" text-anchor="middle" font-weight="700">0.30 · signal</text>
+      <text x="150" y="730" text-anchor="middle" fill="#6B6580">raw demand</text>
+      <text x="150" y="743" text-anchor="middle" fill="#6B6580" font-size="9">0.6·max + 0.4·avg</text>
+
+      <rect x="225" y="698" width="130" height="52" rx="8" fill="#FFFFFF" stroke="#D6CFE8"/>
+      <text x="290" y="715" text-anchor="middle" font-weight="700">0.25 · cross-src</text>
+      <text x="290" y="730" text-anchor="middle" fill="#6B6580">corroboration</text>
+      <text x="290" y="743" text-anchor="middle" fill="#6B6580" font-size="9">√uniq/√3</text>
+
+      <rect x="365" y="698" width="130" height="52" rx="8" fill="#FFFFFF" stroke="#D6CFE8"/>
+      <text x="430" y="715" text-anchor="middle" font-weight="700">0.20 · recency</text>
+      <text x="430" y="730" text-anchor="middle" fill="#6B6580">freshness</text>
+      <text x="430" y="743" text-anchor="middle" fill="#6B6580" font-size="9">decay 12h</text>
+
+      <rect x="505" y="698" width="115" height="52" rx="8" fill="#FFFFFF" stroke="#D6CFE8"/>
+      <text x="562" y="715" text-anchor="middle" font-weight="700">0.15 · category</text>
+      <text x="562" y="730" text-anchor="middle" fill="#6B6580">SC pillar prior</text>
+      <text x="562" y="743" text-anchor="middle" fill="#6B6580" font-size="9">cric/fest ↑</text>
+
+      <rect x="630" y="698" width="115" height="52" rx="8" fill="#FFFFFF" stroke="#D6CFE8"/>
+      <text x="687" y="715" text-anchor="middle" font-weight="700">0.10 · India</text>
+      <text x="687" y="730" text-anchor="middle" fill="#6B6580">relevance</text>
+      <text x="687" y="743" text-anchor="middle" fill="#6B6580" font-size="9">LLM-assessed</text>
+    </g>
+  </g>
+
+  <line x1="410" y1="770" x2="410" y2="810" stroke="#4A3F6B" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ===== STAGE 5: DIVERSIFY ===== -->
+  <text x="40" y="825" font-size="11" font-weight="700" fill="#8B80A8" letter-spacing="2">
+    STAGE 5 · DIVERSIFY &amp; CACHE
+  </text>
+  <g filter="url(#softShadow)">
+    <rect x="60" y="840" width="340" height="70" rx="14" fill="url(#gradProcess)" stroke="#8B74E8" stroke-width="1.5"/>
+    <text x="230" y="865" text-anchor="middle" font-size="13" font-weight="700" fill="#1A142E">
+      Greedy MMR-style diversification
+    </text>
+    <text x="230" y="883" text-anchor="middle" font-size="10" fill="#6B6580" font-style="italic">
+      per-category penalty · no single pillar takes all slots
+    </text>
+    <text x="230" y="898" text-anchor="middle" font-size="10" fill="#6B6580" font-style="italic">
+      (cricket won't drown festival, devotional, regional)
+    </text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="420" y="840" width="340" height="70" rx="14" fill="url(#gradProcess)" stroke="#8B74E8" stroke-width="1.5"/>
+    <text x="590" y="865" text-anchor="middle" font-size="13" font-weight="700" fill="#1A142E">
+      10-min in-memory cache
+    </text>
+    <text x="590" y="883" text-anchor="middle" font-size="10" fill="#6B6580" font-style="italic">
+      respects freshness · easy swap to Vercel KV / Upstash
+    </text>
+    <text x="590" y="898" text-anchor="middle" font-size="10" fill="#6B6580" font-style="italic">
+      ?fresh=1 bypasses cache
+    </text>
+  </g>
+
+  <line x1="410" y1="915" x2="410" y2="955" stroke="#4A3F6B" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ===== OUTPUT ===== -->
+  <g filter="url(#softShadow)">
+    <rect x="210" y="960" width="400" height="44" rx="14" fill="url(#gradOutput)" stroke="#10B981" stroke-width="1.5"/>
+    <text x="410" y="988" text-anchor="middle" font-size="14" font-weight="700" fill="#1A142E">
+      GET /api/trends → Ranked feed → Mobile UI
+    </text>
+  </g>
+</svg>

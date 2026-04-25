@@ -1,0 +1,415 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 920" font-family="sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E5264B" stop-opacity="0.18"/>
+      <stop offset="40%" stop-color="#FF6B35" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0F0B1F"/>
+    </linearGradient>
+    <linearGradient id="heroGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E5264B"/>
+      <stop offset="55%" stop-color="#B5123D"/>
+      <stop offset="100%" stop-color="#2A1F4A"/>
+    </linearGradient>
+    <linearGradient id="heatGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFB800"/>
+      <stop offset="50%" stop-color="#FF4D4D"/>
+      <stop offset="100%" stop-color="#C1275C"/>
+    </linearGradient>
+    <linearGradient id="aiIcon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF6B35"/>
+      <stop offset="100%" stop-color="#E5264B"/>
+    </linearGradient>
+    <radialGradient id="heroOrb" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E5264B" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#E5264B" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="phoneShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+    <clipPath id="phone1Clip"><rect x="40" y="40" width="380" height="840" rx="44"/></clipPath>
+    <clipPath id="phone2Clip"><rect x="460" y="40" width="380" height="840" rx="44"/></clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="880" height="920" fill="#FAFAFB"/>
+
+  <!-- ================================================================ -->
+  <!-- PHONE 1 — FEED VIEW                                                -->
+  <!-- ================================================================ -->
+
+  <!-- Phone frame shadow + outer bezel -->
+  <g filter="url(#phoneShadow)">
+    <rect x="34" y="34" width="392" height="852" rx="50" fill="#1A142E"/>
+  </g>
+  <rect x="40" y="40" width="380" height="840" rx="44" fill="#0F0B1F"/>
+
+  <g clip-path="url(#phone1Clip)">
+    <!-- Dark background with warm radial gradient -->
+    <rect x="40" y="40" width="380" height="840" fill="url(#bgGrad)"/>
+
+    <!-- Status bar -->
+    <text x="72" y="76" font-size="12" font-weight="600" fill="#F5F1FF">9:41</text>
+    <g fill="#F5F1FF">
+      <rect x="348" y="66" width="4" height="10" rx="1"/>
+      <rect x="356" y="63" width="4" height="13" rx="1"/>
+      <rect x="364" y="60" width="4" height="16" rx="1"/>
+      <rect x="376" y="62" width="20" height="12" rx="2.5"/>
+    </g>
+
+    <!-- Top nav: logo + title + refresh -->
+    <g transform="translate(58, 96)">
+      <rect x="0" y="0" width="28" height="28" rx="7" fill="url(#aiIcon)"/>
+      <text x="14" y="18" text-anchor="middle" font-size="11" font-weight="800" fill="#FFF">SC</text>
+
+      <text x="36" y="10" font-size="9" fill="#8B80A8">ShareChat</text>
+      <text x="36" y="24" font-size="13" font-weight="700" fill="#FFF">Trends <tspan fill="#FF6B35">ट्रेंड्स</tspan></text>
+
+      <g transform="translate(262, 2)">
+        <rect x="0" y="0" width="62" height="24" rx="12" fill="none" stroke="#2E2545" stroke-width="1"/>
+        <circle cx="13" cy="12" r="4" fill="none" stroke="#8B80A8" stroke-width="1.3"/>
+        <path d="M11 12 A2 2 0 0 1 15 12" stroke="#8B80A8" stroke-width="1.3" fill="none"/>
+        <text x="34" y="16" font-size="10" fill="#8B80A8">refresh</text>
+      </g>
+    </g>
+
+    <!-- Meta row -->
+    <text x="58" y="148" font-size="9" fill="#8B80A8">आज 24 अप्रैल · updated 2 min ago</text>
+    <text x="402" y="148" text-anchor="end" font-size="9" fill="#8B80A8">15 trends</text>
+
+    <!-- Category filter pills -->
+    <g transform="translate(58, 160)">
+      <rect x="0" y="0" width="34" height="20" rx="10" fill="#FFF"/>
+      <text x="17" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="#0F0B1F">सब</text>
+
+      <g transform="translate(42, 0)">
+        <rect width="62" height="20" rx="10" fill="#10B98126" stroke="#10B98150" stroke-width="1"/>
+        <text x="8" y="14" font-size="10" fill="#6EE7B7">🏏 क्रिकेट</text>
+      </g>
+      <g transform="translate(112, 0)">
+        <rect width="64" height="20" rx="10" fill="#F59E0B26" stroke="#F59E0B50" stroke-width="1"/>
+        <text x="8" y="14" font-size="10" fill="#FCD34D">🕉️ भक्ति</text>
+      </g>
+      <g transform="translate(184, 0)">
+        <rect width="72" height="20" rx="10" fill="#FB923C26" stroke="#FB923C50" stroke-width="1"/>
+        <text x="8" y="14" font-size="10" fill="#FDBA74">🪔 त्यौहार</text>
+      </g>
+      <g transform="translate(264, 0)">
+        <rect width="82" height="20" rx="10" fill="#D946EF26" stroke="#D946EF50" stroke-width="1"/>
+        <text x="8" y="14" font-size="10" fill="#F0ABFC">🎬 मनोरंजन</text>
+      </g>
+    </g>
+
+    <!-- Divider -->
+    <line x1="58" y1="196" x2="402" y2="196" stroke="#2E2545" stroke-width="1" stroke-opacity="0.5"/>
+
+    <!-- ============ HERO CARD (#1) ============ -->
+    <circle cx="380" cy="225" r="64" fill="url(#heroOrb)"/>
+
+    <g transform="translate(58, 212)">
+      <rect width="344" height="170" rx="22" fill="url(#heroGrad)" stroke="#E5264B" stroke-opacity="0.3"/>
+
+      <!-- #1 Trending badge + cricket pill -->
+      <g transform="translate(14, 14)">
+        <rect width="72" height="18" rx="9" fill="#FFFFFF26"/>
+        <circle cx="8" cy="9" r="2" fill="#FFF"/>
+        <text x="14" y="13" font-size="9" font-weight="700" fill="#FFF">#1 TRENDING</text>
+
+        <g transform="translate(80, 0)">
+          <rect width="66" height="18" rx="9" fill="#10B98126" stroke="#10B98150"/>
+          <text x="5" y="13" font-size="9" fill="#6EE7B7">🏏 क्रिकेट</text>
+        </g>
+
+        <g transform="translate(230, 0)">
+          <text x="0" y="13" font-size="9" fill="#FFE5D9">🔥🔥🔥 <tspan font-weight="700" fill="#FFF">94</tspan></text>
+        </g>
+      </g>
+
+      <!-- Main hashtag -->
+      <text x="14" y="72" font-size="23" font-weight="800" fill="#FFF">#भारतबनाम</text>
+      <text x="14" y="98" font-size="23" font-weight="800" fill="#FFF">ऑस्ट्रेलिया</text>
+      <text x="14" y="115" font-size="10" fill="#FFFFFFB0">#IndiaVsAustralia</text>
+
+      <!-- Description -->
+      <text x="14" y="138" font-size="11" fill="#FFFFFFE0">तीसरे वनडे में रोमांचक मुकाबला,</text>
+      <text x="14" y="152" font-size="11" fill="#FFFFFFE0">कोहली का शतक</text>
+
+      <!-- Footer -->
+      <text x="14" y="164" font-size="9" fill="#FFFFFFB0"><tspan font-weight="700" fill="#FFF">142K</tspan> posts</text>
+      <text x="330" y="164" text-anchor="end" font-size="10" font-weight="700" fill="#FFF">देखें →</text>
+    </g>
+
+    <!-- ============ TREND CARD #2 ============ -->
+    <g transform="translate(58, 394)">
+      <rect width="344" height="92" rx="14" fill="#1A142EC0" stroke="#2E2545"/>
+
+      <!-- Rank -->
+      <text x="24" y="38" text-anchor="middle" font-size="22" font-weight="800" fill="#FF6B35">2</text>
+      <text x="24" y="50" text-anchor="middle" font-size="7" fill="#8B80A8" letter-spacing="1">RANK</text>
+
+      <!-- Content -->
+      <g transform="translate(56, 0)">
+        <!-- Pill -->
+        <rect x="14" y="14" width="64" height="14" rx="7" fill="#F59E0B26" stroke="#F59E0B50"/>
+        <text x="20" y="24" font-size="8" fill="#FCD34D">🕉️ भक्ति</text>
+        <text x="84" y="24" font-size="8" fill="#8B80A8">98K posts</text>
+
+        <!-- Hashtag -->
+        <text x="14" y="46" font-size="15" font-weight="700" fill="#FFF">#करवाचौथ2026</text>
+        <text x="14" y="58" font-size="8" fill="#8B80A8">#KarwaChauth2026</text>
+
+        <!-- Desc -->
+        <text x="14" y="74" font-size="10" fill="#B8B1CC">करवा चौथ का व्रत, चांद निकलने का</text>
+
+        <!-- Heat bar -->
+        <g transform="translate(14, 80)">
+          <text x="0" y="8" font-size="8">🔥🔥🔥</text>
+          <rect x="22" y="3" width="180" height="3" rx="1.5" fill="#2E2545"/>
+          <rect x="22" y="3" width="158" height="3" rx="1.5" fill="url(#heatGrad)"/>
+          <text x="208" y="9" font-size="8" font-weight="700" fill="#FF4D4D">88</text>
+        </g>
+      </g>
+
+      <text x="330" y="50" font-size="12" fill="#8B80A8">›</text>
+    </g>
+
+    <!-- ============ TREND CARD #3 ============ -->
+    <g transform="translate(58, 496)">
+      <rect width="344" height="92" rx="14" fill="#1A142EC0" stroke="#2E2545"/>
+
+      <text x="24" y="38" text-anchor="middle" font-size="22" font-weight="800" fill="#FF6B35">3</text>
+      <text x="24" y="50" text-anchor="middle" font-size="7" fill="#8B80A8" letter-spacing="1">RANK</text>
+
+      <g transform="translate(56, 0)">
+        <rect x="14" y="14" width="68" height="14" rx="7" fill="#FB923C26" stroke="#FB923C50"/>
+        <text x="20" y="24" font-size="8" fill="#FDBA74">🪔 त्यौहार</text>
+        <text x="88" y="24" font-size="8" fill="#8B80A8">76K posts</text>
+
+        <text x="14" y="46" font-size="15" font-weight="700" fill="#FFF">#दिवाली2026</text>
+        <text x="14" y="58" font-size="8" fill="#8B80A8">#Diwali2026</text>
+
+        <text x="14" y="74" font-size="10" fill="#B8B1CC">दिवाली कब है, लक्ष्मी पूजा का शुभ</text>
+
+        <g transform="translate(14, 80)">
+          <text x="0" y="8" font-size="8">🔥🔥🔥</text>
+          <rect x="22" y="3" width="180" height="3" rx="1.5" fill="#2E2545"/>
+          <rect x="22" y="3" width="148" height="3" rx="1.5" fill="url(#heatGrad)"/>
+          <text x="208" y="9" font-size="8" font-weight="700" fill="#FF4D4D">82</text>
+        </g>
+      </g>
+
+      <text x="330" y="50" font-size="12" fill="#8B80A8">›</text>
+    </g>
+
+    <!-- ============ TREND CARD #4 ============ -->
+    <g transform="translate(58, 598)">
+      <rect width="344" height="92" rx="14" fill="#1A142EC0" stroke="#2E2545"/>
+
+      <text x="24" y="38" text-anchor="middle" font-size="22" font-weight="800" fill="#FF6B35">4</text>
+      <text x="24" y="50" text-anchor="middle" font-size="7" fill="#8B80A8" letter-spacing="1">RANK</text>
+
+      <g transform="translate(56, 0)">
+        <rect x="14" y="14" width="78" height="14" rx="7" fill="#D946EF26" stroke="#D946EF50"/>
+        <text x="20" y="24" font-size="8" fill="#F0ABFC">🎬 मनोरंजन</text>
+        <text x="98" y="24" font-size="8" fill="#8B80A8">58K posts</text>
+
+        <text x="14" y="46" font-size="15" font-weight="700" fill="#FFF">#StrangerThings5</text>
+        <text x="14" y="58" font-size="8" fill="#8B80A8">#StrangerThings5</text>
+
+        <text x="14" y="74" font-size="10" fill="#B8B1CC">नेटफ्लिक्स की हिट सीरीज़ का फाइनल</text>
+
+        <g transform="translate(14, 80)">
+          <text x="0" y="8" font-size="8">🔥🔥</text>
+          <rect x="22" y="3" width="180" height="3" rx="1.5" fill="#2E2545"/>
+          <rect x="22" y="3" width="142" height="3" rx="1.5" fill="url(#heatGrad)"/>
+          <text x="208" y="9" font-size="8" font-weight="700" fill="#FF4D4D">79</text>
+        </g>
+      </g>
+
+      <text x="330" y="50" font-size="12" fill="#8B80A8">›</text>
+    </g>
+
+    <!-- Bottom fade + partial card -->
+    <g transform="translate(58, 700)">
+      <rect width="344" height="64" rx="14" fill="#1A142E80" stroke="#2E2545" stroke-opacity="0.5"/>
+      <text x="24" y="38" text-anchor="middle" font-size="22" font-weight="800" fill="#FF6B3580">5</text>
+      <g transform="translate(56, 0)">
+        <rect x="14" y="14" width="58" height="14" rx="7" fill="#84CC1626"/>
+        <text x="20" y="24" font-size="8" fill="#BEF264">💼 बिज़नेस</text>
+        <text x="14" y="46" font-size="14" font-weight="700" fill="#FFFA0">#RBIरेपोरेट</text>
+      </g>
+    </g>
+    <rect x="40" y="760" width="380" height="120" fill="url(#fadeOut)"/>
+    <linearGradient id="fadeOut" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0F0B1F" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0F0B1F"/>
+    </linearGradient>
+
+    <!-- Home indicator -->
+    <rect x="170" y="862" width="120" height="4" rx="2" fill="#FFF" fill-opacity="0.3"/>
+  </g>
+
+  <!-- Phone 1 label -->
+  <text x="230" y="908" text-anchor="middle" font-size="12" font-weight="600" fill="#6B6580">Feed · Home</text>
+
+  <!-- ================================================================ -->
+  <!-- PHONE 2 — DETAIL VIEW                                              -->
+  <!-- ================================================================ -->
+
+  <g filter="url(#phoneShadow)">
+    <rect x="454" y="34" width="392" height="852" rx="50" fill="#1A142E"/>
+  </g>
+  <rect x="460" y="40" width="380" height="840" rx="44" fill="#0F0B1F"/>
+
+  <g clip-path="url(#phone2Clip)">
+    <rect x="460" y="40" width="380" height="840" fill="url(#bgGrad)"/>
+
+    <!-- Status bar -->
+    <text x="492" y="76" font-size="12" font-weight="600" fill="#F5F1FF">9:42</text>
+    <g fill="#F5F1FF">
+      <rect x="768" y="66" width="4" height="10" rx="1"/>
+      <rect x="776" y="63" width="4" height="13" rx="1"/>
+      <rect x="784" y="60" width="4" height="16" rx="1"/>
+      <rect x="796" y="62" width="20" height="12" rx="2.5"/>
+    </g>
+
+    <!-- Top nav: back + title + share -->
+    <g transform="translate(478, 96)">
+      <circle cx="14" cy="14" r="14" fill="#1A142EC0" stroke="#2E2545"/>
+      <path d="M16 8 L10 14 L16 20" stroke="#FFF" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+      <text x="40" y="10" font-size="9" fill="#8B80A8">Trend #1</text>
+      <text x="40" y="24" font-size="12" font-weight="700" fill="#FFF">#IndiaVsAustralia</text>
+
+      <g transform="translate(316, 0)">
+        <circle cx="14" cy="14" r="14" fill="#1A142EC0" stroke="#2E2545"/>
+        <path d="M8 14 L14 8 L20 14 M14 8 L14 20" stroke="#FFF" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      </g>
+    </g>
+
+    <!-- HERO block -->
+    <circle cx="800" cy="220" r="80" fill="url(#heroOrb)"/>
+    <g transform="translate(478, 150)">
+      <rect width="344" height="236" rx="22" fill="url(#heroGrad)" stroke="#E5264B" stroke-opacity="0.3"/>
+
+      <g transform="translate(14, 14)">
+        <rect width="62" height="18" rx="9" fill="#10B98126" stroke="#10B98150"/>
+        <text x="6" y="13" font-size="9" fill="#6EE7B7">🏏 क्रिकेट</text>
+
+        <text x="70" y="13" font-size="8" fill="#FFFFFFB0" letter-spacing="1" font-weight="600">#1 · अभी ट्रेंडिंग</text>
+      </g>
+
+      <!-- Huge hashtag -->
+      <text x="14" y="80" font-size="29" font-weight="800" fill="#FFF">#भारतबनाम</text>
+      <text x="14" y="110" font-size="29" font-weight="800" fill="#FFF">ऑस्ट्रेलिया</text>
+      <text x="14" y="128" font-size="10" fill="#FFFFFFB0">#IndiaVsAustralia</text>
+
+      <text x="14" y="152" font-size="11" fill="#FFFFFFE0">तीसरे वनडे में रोमांचक मुकाबला,</text>
+      <text x="14" y="166" font-size="11" fill="#FFFFFFE0">कोहली का शतक</text>
+
+      <!-- Stats row -->
+      <g transform="translate(14, 182)">
+        <text x="0" y="0" font-size="7" fill="#FFFFFFA0" letter-spacing="1">HEAT</text>
+        <text x="0" y="14" font-size="15" font-weight="700" fill="#FFF">94</text>
+
+        <text x="100" y="0" font-size="7" fill="#FFFFFFA0" letter-spacing="1">POSTS</text>
+        <text x="100" y="14" font-size="15" font-weight="700" fill="#FFF">142K</text>
+
+        <text x="200" y="0" font-size="7" fill="#FFFFFFA0" letter-spacing="1">SOURCES</text>
+        <text x="200" y="14" font-size="15" font-weight="700" fill="#FFF">3</text>
+      </g>
+
+      <!-- Heat bar -->
+      <g transform="translate(14, 214)">
+        <text x="0" y="8" font-size="8" fill="#FFF">🔥🔥🔥</text>
+        <rect x="22" y="3" width="270" height="4" rx="2" fill="#FFFFFF20"/>
+        <rect x="22" y="3" width="254" height="4" rx="2" fill="url(#heatGrad)"/>
+        <text x="300" y="9" font-size="9" font-weight="700" fill="#FFF">94</text>
+      </g>
+    </g>
+
+    <!-- AI BRIEFING block -->
+    <g transform="translate(478, 398)">
+      <rect width="344" height="176" rx="14" fill="#1A142EC0" stroke="#2E2545"/>
+
+      <!-- Header -->
+      <g transform="translate(14, 14)">
+        <rect width="20" height="20" rx="5" fill="url(#aiIcon)"/>
+        <path d="M10 4 L11 8 L14 9 L11 10 L10 14 L9 10 L6 9 L9 8 Z" fill="#FFF" transform="translate(0,0)"/>
+
+        <text x="28" y="8" font-size="7" fill="#8B80A8" letter-spacing="1.2">AI BRIEFING</text>
+        <text x="28" y="20" font-size="11" font-weight="700" fill="#FFF">इस ट्रेंड के बारे में</text>
+      </g>
+
+      <!-- Bullet points -->
+      <g transform="translate(14, 50)">
+        <circle cx="4" cy="5" r="2.5" fill="#FF6B35"/>
+        <text x="14" y="8" font-size="10" fill="#E8DFFF">तीसरे वनडे में भारत ने ऑस्ट्रेलिया को</text>
+        <text x="14" y="22" font-size="10" fill="#E8DFFF">कांटे की टक्कर दी है।</text>
+
+        <circle cx="4" cy="42" r="2.5" fill="#FF6B35"/>
+        <text x="14" y="45" font-size="10" fill="#E8DFFF">कोहली ने 41वां शतक जड़ा, फैन्स में</text>
+        <text x="14" y="59" font-size="10" fill="#E8DFFF">जश्न का माहौल है।</text>
+
+        <circle cx="4" cy="79" r="2.5" fill="#FF6B35"/>
+        <text x="14" y="82" font-size="10" fill="#E8DFFF">सोशल मीडिया पर रिएक्शंस की बाढ़</text>
+        <text x="14" y="96" font-size="10" fill="#E8DFFF">आ गई है।</text>
+      </g>
+
+      <!-- Divider -->
+      <line x1="14" y1="158" x2="330" y2="158" stroke="#2E2545"/>
+    </g>
+
+    <!-- Creator hashtags strip -->
+    <g transform="translate(478, 584)">
+      <rect width="344" height="60" rx="14" fill="#1A142EC0" stroke="#2E2545"/>
+      <text x="14" y="16" font-size="7" fill="#8B80A8" letter-spacing="1.2">CREATOR HASHTAGS</text>
+
+      <g font-size="9" transform="translate(14, 32)">
+        <rect x="0" y="0" width="70" height="18" rx="5" fill="#2A1F4A" stroke="#2E2545"/>
+        <text x="6" y="12" fill="#FF6B35">#भारतबनाम</text>
+
+        <rect x="76" y="0" width="66" height="18" rx="5" fill="#2A1F4A" stroke="#2E2545"/>
+        <text x="82" y="12" fill="#FF6B35">#ShareChat</text>
+
+        <rect x="148" y="0" width="56" height="18" rx="5" fill="#2A1F4A" stroke="#2E2545"/>
+        <text x="154" y="12" fill="#FF6B35">#Cricket</text>
+
+        <rect x="210" y="0" width="46" height="18" rx="5" fill="#2A1F4A" stroke="#2E2545"/>
+        <text x="216" y="12" fill="#FF6B35">#कोहली</text>
+
+        <rect x="262" y="0" width="58" height="18" rx="5" fill="#2A1F4A" stroke="#2E2545"/>
+        <text x="268" y="12" fill="#FF6B35">#INDvsAUS</text>
+      </g>
+    </g>
+
+    <!-- Sources block -->
+    <g transform="translate(478, 656)">
+      <rect width="344" height="92" rx="14" fill="#1A142EC0" stroke="#2E2545"/>
+      <text x="14" y="18" font-size="7" fill="#8B80A8" letter-spacing="1.2">SIGNAL SOURCES</text>
+      <text x="14" y="34" font-size="9" fill="#8B80A8">यह ट्रेंड इन जगहों से पकड़ा गया:</text>
+
+      <g transform="translate(14, 42)" font-size="9">
+        <rect x="0" y="0" width="92" height="18" rx="5" fill="#2A1F4A80" stroke="#2E2545"/>
+        <text x="6" y="12" fill="#8B80A8">🔍 Google Trends</text>
+
+        <rect x="100" y="0" width="52" height="18" rx="5" fill="#2A1F4A80" stroke="#2E2545"/>
+        <text x="106" y="12" fill="#8B80A8">📰 News</text>
+
+        <rect x="158" y="0" width="92" height="18" rx="5" fill="#2A1F4A80" stroke="#2E2545"/>
+        <text x="164" y="12" fill="#8B80A8">💬 Reddit r/india</text>
+      </g>
+
+      <!-- Read original button -->
+      <g transform="translate(14, 68)">
+        <rect width="316" height="20" rx="10" fill="#2A1F4A" stroke="#2E2545"/>
+        <text x="158" y="14" text-anchor="middle" font-size="10" font-weight="600" fill="#FFF">मूल खबर पढ़ें →</text>
+      </g>
+    </g>
+
+    <!-- Home indicator -->
+    <rect x="590" y="862" width="120" height="4" rx="2" fill="#FFF" fill-opacity="0.3"/>
+  </g>
+
+  <!-- Phone 2 label -->
+  <text x="650" y="908" text-anchor="middle" font-size="12" font-weight="600" fill="#6B6580">Detail · AI Briefing</text>
+</svg>

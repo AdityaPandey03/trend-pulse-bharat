@@ -1,0 +1,356 @@
+{
+  "_note": "Sample output from GET /api/trends?debug=1 on a recent invocation. Used as the backup screenshot deliverable in case the live prototype is temporarily down.",
+  "generatedAt": "2026-04-25T17:56:38.895Z",
+  "count": 15,
+  "cacheHit": false,
+  "nextRefreshAt": "2026-04-25T18:06:38.895Z",
+  "trends": [
+    {
+      "id": "tr_1_kerala-temple-fire-s",
+      "rank": 1,
+      "hashtagHi": "#केरलमंदिरअग्निसुरक्षा",
+      "hashtagEn": "#KeralaTempleFireSafety",
+      "descriptionHi": "मुंडथिकोड दुर्घटना के बाद केरल में मंदिरों से आतिशबाजी हटाने की मांग तेज",
+      "descriptionEn": "Post-Mundathikode tragedy, calls to ban fireworks & elephants in Kerala temple festivals",
+      "category": "festival",
+      "heat": 85,
+      "sources": [
+        "news_rss"
+      ],
+      "approxPosts": 40880,
+      "primaryUrl": "https://www.thehindu.com/news/national/kerala/calls-to-do-away-with-elephants-fireworks-in-temple-festivals-get-louder-in-kerala/article70902342.ece",
+      "slug": "kerala-temple-fire-safety",
+      "scoreBreakdown": {
+        "signal": 0.997,
+        "crossSource": 0.577,
+        "recency": 0.989,
+        "category": 0.875,
+        "indiaRel": 0.8
+      }
+    },
+    {
+      "id": "tr_2_delhi-heatwave-crisi",
+      "rank": 2,
+      "hashtagHi": "#दिल्लीहीटवेव",
+      "hashtagEn": "#DelhiHeatwave",
+      "descriptionHi": "दिल्ली में 42.8°C पर पारा, साल का सबसे गर्म दिन; ज्यादातर भारतीय शहर रिकॉर्ड तापमान तोड़ रहे",
+      "descriptionEn": "Delhi scorches at 42.8°C, hottest day of year; 95 of world's 100 hottest cities today in India",
+      "category": "regional_news",
+      "heat": 84,
+      "sources": [
+        "news_rss",
+        "reddit_india"
+      ],
+      "approxPosts": 39584,
+      "primaryUrl": "https://www.hindustantimes.com/india-news/delhi-sizzles-at-42-8-deg-c-logs-hottest-day-of-year-so-far-101777136354926.html",
+      "slug": "delhi-heatwave-crisis",
+      "scoreBreakdown": {
+        "signal": 0.889,
+        "crossSource": 0.816,
+        "recency": 0.924,
+        "category": 0.625,
+        "indiaRel": 0.92
+      }
+    },
+    {
+      "id": "tr_3_heinrich-klaasen-ipl",
+      "rank": 3,
+      "hashtagHi": "#हेनरिकक्लासेन",
+      "hashtagEn": "#HeinrichKlaasen",
+      "descriptionHi": "राजस्थान रॉयल्स के लिए हेनरिक क्लासेन का शानदार प्रदर्शन, नई बल्लेबाजी शैली",
+      "descriptionEn": "Heinrich Klaasen's stellar IPL form with Rajasthan Royals; new batting approach",
+      "category": "cricket",
+      "heat": 80,
+      "sources": [
+        "google_trends"
+      ],
+      "approxPosts": 7500,
+      "primaryUrl": "https://sportstar.thehindu.com/cricket/ipl/ravi-bishnoi-ipl-fresh-start-remodelled-action-length-control-wickets-analysis-rajasthan-royals-sangakkara/article70904794.ece",
+      "slug": "heinrich-klaasen-ipl-2026",
+      "scoreBreakdown": {
+        "signal": 0.802,
+        "crossSource": 0.577,
+        "recency": 0.949,
+        "category": 0.875,
+        "indiaRel": 0.95
+      }
+    },
+    {
+      "id": "tr_4_ghazipur-girl-death-",
+      "rank": 4,
+      "hashtagHi": "#गाजीपुरन्याय",
+      "hashtagEn": "#GhaziburJustice",
+      "descriptionHi": "गाजीपुर में लड़की की मौत; राहुल गांधी ने तत्काल न्याय की मांग, महिला अत्याचार का मुद्दा",
+      "descriptionEn": "Girl's death in Ghazipur sparks political row; Rahul Gandhi demands immediate justice",
+      "category": "politics",
+      "heat": 79,
+      "sources": [
+        "news_rss"
+      ],
+      "approxPosts": 40809,
+      "primaryUrl": "https://www.thehindu.com/news/national/uttar-pradesh/victim-is-dalit-poor-every-time-rahul-gandhi-demands-probe-into-ghazipur-rape-murder/article70904654.ece",
+      "slug": "ghazipur-girl-death-case",
+      "scoreBreakdown": {
+        "signal": 0.995,
+        "crossSource": 0.577,
+        "recency": 0.985,
+        "category": 0.5,
+        "indiaRel": 0.78
+      }
+    },
+    {
+      "id": "tr_5_shraddha-kapoor-drug",
+      "rank": 5,
+      "hashtagHi": "#श्रद्धाकपूरड्रग्सकेस",
+      "hashtagEn": "#ShraddhaKapoorDrugsCase",
+      "descriptionHi": "श्रद्धा कपूर और नोरा फतेही को 2022 ड्रग्स केस में क्लीनचिट, कोई सबूत नहीं",
+      "descriptionEn": "Shraddha Kapoor & Nora Fatehi cleared in 2022 drugs case; no evidence found",
+      "category": "entertainment",
+      "heat": 79,
+      "sources": [
+        "news_rss"
+      ],
+      "approxPosts": 39863,
+      "primaryUrl": "https://www.bollywoodhungama.com/news/bollywood/shraddha-kapoor-nora-fatehi-cleared-in-2022-drugs-case-as-police-find-no-evidence-report/",
+      "slug": "shraddha-kapoor-drugs-case-cleared",
+      "scoreBreakdown": {
+        "signal": 0.972,
+        "crossSource": 0.577,
+        "recency": 0.762,
+        "category": 0.75,
+        "indiaRel": 0.88
+      }
+    },
+    {
+      "id": "tr_6_karnataka-farming-ma",
+      "rank": 6,
+      "hashtagHi": "#कर्नाटकखेती",
+      "hashtagEn": "#KarnatakaFarming",
+      "descriptionHi": "कर्नाटक मंत्री: खेती तभी व्यावहारिक है जब किसान बाजार भाव तय कर सकें",
+      "descriptionEn": "Karnataka Minister: farming viable only when growers control market prices",
+      "category": "business",
+      "heat": 75,
+      "sources": [
+        "news_rss"
+      ],
+      "approxPosts": 40755,
+      "primaryUrl": "https://www.thehindu.com/news/national/karnataka/farming-is-viable-only-when-growers-can-decide-market-prices-says-karnataka-minister/article70906297.ece",
+      "slug": "karnataka-farming-market-prices",
+      "scoreBreakdown": {
+        "signal": 0.994,
+        "crossSource": 0.577,
+        "recency": 0.982,
+        "category": 0.25,
+        "indiaRel": 0.72
+      }
+    },
+    {
+      "id": "tr_7_kasaragod-child-marr",
+      "rank": 7,
+      "hashtagHi": "#बालविवाहविरोध",
+      "hashtagEn": "#ChildMarriageCase",
+      "descriptionHi": "कासरागोड में बाल विवाह मामले में 4 लोगों पर केस, नाबालिग लड़की की शादी",
+      "descriptionEn": "Four booked for child marriage in Kasaragod after minor girl found married",
+      "category": "regional_news",
+      "heat": 81,
+      "sources": [
+        "news_rss"
+      ],
+      "approxPosts": 41000,
+      "primaryUrl": "https://www.thehindu.com/news/national/kerala/four-booked-for-child-marriage-in-kasaragod/article70906365.ece",
+      "slug": "kasaragod-child-marriage-case",
+      "scoreBreakdown": {
+        "signal": 1,
+        "crossSource": 0.577,
+        "recency": 0.995,
+        "category": 0.625,
+        "indiaRel": 0.75
+      }
+    },
+    {
+      "id": "tr_8_mamata-vs-bjp-bengal",
+      "rank": 8,
+      "hashtagHi": "#ममताबैनर्जीभाजपा",
+      "hashtagEn": "#MamataVsBJP",
+      "descriptionHi": "ममता बैनर्जी का दावा: भाजपा को बंगाल चुनाव जीतने में कैबिनेट और 19 CM भी मदद नहीं कर सकते",
+      "descriptionEn": "Mamata claims entire cabinet & 19 CMs can't help BJP win Bengal polls",
+      "category": "politics",
+      "heat": 78,
+      "sources": [
+        "google_trends",
+        "news_rss"
+      ],
+      "approxPosts": 75,
+      "primaryUrl": "https://www.anandabazar.com/elections/west-bengal-assembly-election/mamata-banerjee-addressing-public-meeting-at-bhabanipur-live-updates-dgtl/cid/1682991",
+      "slug": "mamata-vs-bjp-bengal-elections",
+      "scoreBreakdown": {
+        "signal": 0.781,
+        "crossSource": 0.816,
+        "recency": 0.941,
+        "category": 0.5,
+        "indiaRel": 0.82
+      }
+    },
+    {
+      "id": "tr_9_telangana-ias-transf",
+      "rank": 9,
+      "hashtagHi": "#तेलंगानाIASट्रांसफर",
+      "hashtagEn": "#TelanganaIAS",
+      "descriptionHi": "तेलंगाना में बड़ी IAS बदलिया; प्रियंका आला हैदराबाद कलेक्टर बनीं",
+      "descriptionEn": "Telangana IAS major reshuffle; Priyanka Ala becomes Hyderabad Collector",
+      "category": "regional_news",
+      "heat": 81,
+      "sources": [
+        "news_rss"
+      ],
+      "approxPosts": 40929,
+      "primaryUrl": "https://www.thehindu.com/news/national/telangana/major-ias-reshuffle-in-telangana-priyanka-ala-is-hyderabad-collector/article70906424.ece",
+      "slug": "telangana-ias-transfers-april-2026",
+      "scoreBreakdown": {
+        "signal": 0.998,
+        "crossSource": 0.577,
+        "recency": 0.991,
+        "category": 0.625,
+        "indiaRel": 0.75
+      }
+    },
+    {
+      "id": "tr_10_indias-political-his",
+      "rank": 10,
+      "hashtagHi": "#भारतराजनीतिइतिहास",
+      "hashtagEn": "#IndianPoliticalHistory",
+      "descriptionHi": "1967-71: भारत की राजनीतिक अस्थिरता का दौर, कांग्रेस का प्रभुत्व समाप्त",
+      "descriptionEn": "1967-1971: era of political chaos when 45 govts fell; Congress dominance ended",
+      "category": "politics",
+      "heat": 78,
+      "sources": [
+        "news_rss"
+      ],
+      "approxPosts": 40565,
+      "primaryUrl": "https://www.ndtv.com/india-news/raghav-chadha-rebellion-aap-rebellion-aap-exodus-45-governments-4-years-defections-and-indian-politics-era-of-instability-11408868#publisher=newsstand",
+      "slug": "indias-political-history-1967-71",
+      "scoreBreakdown": {
+        "signal": 0.989,
+        "crossSource": 0.577,
+        "recency": 0.973,
+        "category": 0.5,
+        "indiaRel": 0.7
+      }
+    },
+    {
+      "id": "tr_11_israel-mizoram-bnei-",
+      "rank": 11,
+      "hashtagHi": "#इजरायलमिजोरम",
+      "hashtagEn": "#IsraelMizoram",
+      "descriptionHi": "'विंग्स ऑफ डॉन' ऑपरेशन: 240 बेनी मेनाशे सदस्यों को मिजोरम से तेल अवीव स्थानांतरित",
+      "descriptionEn": "'Operation Wings of Dawn': Israel airlifts 240 Bnei Menashe from Mizoram to Tel Aviv",
+      "category": "regional_news",
+      "heat": 80,
+      "sources": [
+        "news_rss"
+      ],
+      "approxPosts": 40981,
+      "primaryUrl": "https://www.thehindu.com/news/international/around-240-indians-claiming-descent-from-biblical-tribe-arrive-at-israels-tel-aviv/article70901136.ece",
+      "slug": "israel-mizoram-bnei-menashe-airlift",
+      "scoreBreakdown": {
+        "signal": 1,
+        "crossSource": 0.577,
+        "recency": 0.994,
+        "category": 0.625,
+        "indiaRel": 0.65
+      }
+    },
+    {
+      "id": "tr_12_jds-st-certificate-d",
+      "rank": 12,
+      "hashtagHi": "#जेडीएसतालवार",
+      "hashtagEn": "#JDSSTCertificate",
+      "descriptionHi": "JDS नेता का आरोप: तालवार समुदाय को ST प्रमाणपत्र देने से इनकार",
+      "descriptionEn": "JD(S) leader alleges denial of ST certificates to Talawar community",
+      "category": "regional_news",
+      "heat": 80,
+      "sources": [
+        "news_rss"
+      ],
+      "approxPosts": 40947,
+      "primaryUrl": "https://www.thehindu.com/news/national/karnataka/jds-leader-alleges-denial-of-st-certificates-to-talawar-community/article70905998.ece",
+      "slug": "jds-st-certificate-denial",
+      "scoreBreakdown": {
+        "signal": 0.999,
+        "crossSource": 0.577,
+        "recency": 0.992,
+        "category": 0.625,
+        "indiaRel": 0.6
+      }
+    },
+    {
+      "id": "tr_13_india-womens-cricket",
+      "rank": 13,
+      "hashtagHi": "#भारतीयमहिलाक्रिकेट",
+      "hashtagEn": "#IndiaWomensCricket",
+      "descriptionHi": "दीप्ति शर्मा और भारतीय महिला टीम पावरप्ले में सुधार के लिए प्रयास कर रही है",
+      "descriptionEn": "Deepti Sharma leads India's women's cricket team push for powerplay gains",
+      "category": "cricket",
+      "heat": 56,
+      "sources": [
+        "google_trends"
+      ],
+      "approxPosts": 75,
+      "primaryUrl": "https://www.icc-cricket.com/news/india-eye-powerplay-gains-as-muzumdar-backs-senior-core-to-bounce-back",
+      "slug": "india-womens-cricket-tour",
+      "scoreBreakdown": {
+        "signal": 0.01,
+        "crossSource": 0.577,
+        "recency": 0.935,
+        "category": 0.875,
+        "indiaRel": 0.9
+      }
+    },
+    {
+      "id": "tr_14_raghav-chadha-joins-",
+      "rank": 14,
+      "hashtagHi": "#राघवचढ्ढाभाजपा",
+      "hashtagEn": "#RaghavChadhaAAP",
+      "descriptionHi": "राघव चढ्ढा राज्यसभा में AAP से अलग होकर BJP में शामिल, 2/3 सांसद भी जा सकते हैं",
+      "descriptionEn": "Raghav Chadha switches from AAP to BJP; reports suggest 2/3 RS MPs may also defect",
+      "category": "politics",
+      "heat": 66,
+      "sources": [
+        "reddit_india"
+      ],
+      "approxPosts": 35617,
+      "primaryUrl": "https://reddit.com/r/india/comments/1svaluc/raghav_chadha_loses_1_million_followers_on_social/",
+      "slug": "raghav-chadha-joins-bjp",
+      "scoreBreakdown": {
+        "signal": 0.822,
+        "crossSource": 0.577,
+        "recency": 0.527,
+        "category": 0.5,
+        "indiaRel": 0.85
+      }
+    },
+    {
+      "id": "tr_15_india-gdp-vs-banglad",
+      "rank": 15,
+      "hashtagHi": "#भारतजीडीपीबांग्लादेश",
+      "hashtagEn": "#IndiaGDP",
+      "descriptionHi": "IMF अनुमान: भारत की प्रति व्यक्ति आय 2026 में बांग्लादेश से कम होगी",
+      "descriptionEn": "IMF estimates India's per capita GDP below Bangladesh by 2026",
+      "category": "business",
+      "heat": 48,
+      "sources": [
+        "reddit_india"
+      ],
+      "approxPosts": 14751,
+      "primaryUrl": "https://reddit.com/r/india/comments/1svc0c4/indias_per_capita_gdp_estimated_below_bangladesh/",
+      "slug": "india-gdp-vs-bangladesh-2026",
+      "scoreBreakdown": {
+        "signal": 0.344,
+        "crossSource": 0.577,
+        "recency": 0.615,
+        "category": 0.25,
+        "indiaRel": 0.7
+      }
+    }
+  ]
+}
