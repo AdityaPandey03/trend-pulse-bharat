@@ -34,7 +34,7 @@ export async function fetchRedditIndia(): Promise<RawTrend[]> {
   let json: { data?: { children?: RedditChild[] } };
   try {
     const res = await fetch(URL, {
-      headers: { 'User-Agent': 'ShareChatTrendsBot/1.0 (assignment)' },
+      headers: { 'User-Agent': 'TrendPulseBot/1.0' },
       cache: 'no-store',
       signal: AbortSignal.timeout(6000),
     });

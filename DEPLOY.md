@@ -8,7 +8,7 @@ Full end-to-end from zero to a public live URL in about 5 minutes.
 # from the project root
 git init
 git add .
-git commit -m "ShareChat APM assignment - trending tags system"
+git commit -m "ShareChat trending tags system"
 git branch -M main
 
 # Create a new public repo on github.com/new (name it e.g. sharechat-trending)

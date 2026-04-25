@@ -12,7 +12,7 @@
 
 **[0:00–0:15] — Hook + what this is**
 
-> "Hi, I'm Aditya. This is my submission for the ShareChat APM assignment — a system that surfaces what India is trending on, *right now*, built Hindi-first for ShareChat's Bharat audience. Let me show you the app first, then the pipeline behind it."
+> "Hi, I'm Aditya. This is a runtime system that surfaces what India is trending on *right now*, built Hindi-first for ShareChat's Bharat audience. Let me show you the app first, then the pipeline behind it."
 
 *Switch to the running app. Scroll the feed once.*
 

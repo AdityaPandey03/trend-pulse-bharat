@@ -57,7 +57,7 @@ function hoursSince(iso?: string): number {
 async function fetchOne(feed: FeedDef): Promise<RawTrend[]> {
   try {
     const res = await fetch(feed.url, {
-      headers: { 'User-Agent': 'ShareChatTrendsBot/1.0', 'Accept': 'application/rss+xml,application/xml' },
+      headers: { 'User-Agent': 'TrendPulseBot/1.0', 'Accept': 'application/rss+xml,application/xml' },
       cache: 'no-store',
       // 6s per feed; we'd rather lose one slow feed than stall the whole pipeline.
       signal: AbortSignal.timeout(6000),

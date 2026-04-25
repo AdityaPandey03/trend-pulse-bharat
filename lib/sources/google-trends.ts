@@ -41,7 +41,7 @@ export async function fetchGoogleTrends(): Promise<RawTrend[]> {
   try {
     const res = await fetch(GTRENDS_URL, {
       headers: {
-        'User-Agent': 'ShareChatTrendsBot/1.0 (assignment)',
+        'User-Agent': 'TrendPulseBot/1.0',
         'Accept': 'application/rss+xml,application/xml,text/xml',
       },
       // Ensure Next.js doesn't cache at build time — we need live data.

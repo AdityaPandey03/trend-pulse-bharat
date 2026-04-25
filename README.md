@@ -19,7 +19,7 @@ A runtime system that surfaces what India is talking about *right now*, built fo
 
 ## TL;DR
 
-Most trending systems fail ShareChat in two specific ways: they treat India like urban English Twitter, and they output a flat list where everything looks equally important. This submission is built to not do either.
+Most trending systems fail ShareChat in two specific ways: they treat India like urban English Twitter, and they output a flat list where everything looks equally important. This project is built to not do either.
 
 - **3 free, India-native sources** — Google Trends India (search intent, the broadest possible signal), 7 Indian news RSS feeds (recency + editorial), Reddit r/india (cultural pulse). Skips Twitter/X on purpose — it's urban-English-skewed and a bad proxy for ShareChat's audience.
 - **One batched Claude call** that does clustering + categorization + Hindi translation + description + India-relevance filtering — ~10× cheaper than sequential calls, and the model reasons better with all candidates in view.
@@ -42,7 +42,7 @@ Most trending systems fail ShareChat in two specific ways: they treat India like
 **What I deliberately left out and why:**
 - **Twitter/X** — urban-English skew, rate-limited, expensive API. Bad primary for ShareChat's audience.
 - **YouTube trending** — dominated by music videos that are always trending; low signal.
-- **Instagram/TikTok** — closed APIs, not feasible in a 10–14h assignment.
+- **Instagram/TikTok** — closed APIs, not feasible without paid scraping infra.
 - **Hindi news RSS (Jagran/Bhaskar)** — feeds exist but add Devanagari-ingest complexity I didn't have time to harden. **Top thing I'd add next.**
 
 ### Pipeline logic
@@ -121,7 +121,7 @@ This was the most important cost/latency call in the design:
 
 ### What I used GenAI for
 
-In line with the assignment's instructions to be honest about this: I used **Claude Opus 4.7** throughout to scaffold the Next.js project, draft the source adapters, build the UI components, and write this README. All architectural decisions (choice of sources, scoring weights, category taxonomy, one-batched-call design, hero-card UI pattern) were mine; Claude was the executor. Zero code was pasted without being read and understood.
+Being upfront about this: I used **Claude Opus 4.7** throughout to scaffold the Next.js project, draft the source adapters, build the UI components, and write this README. All architectural decisions (choice of sources, scoring weights, category taxonomy, one-batched-call design, hero-card UI pattern) were mine; Claude was the executor. Zero code was pasted without being read and understood.
 
 ---
 
@@ -235,4 +235,4 @@ lib/
 
 ---
 
-*Built by Aditya Pandey · [github.com/AdityaPandey03](https://github.com/AdityaPandey03) · APM application to ShareChat.*
+*Built by Aditya Pandey · [github.com/AdityaPandey03](https://github.com/AdityaPandey03)*

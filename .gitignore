@@ -14,3 +14,8 @@ APM Assignment __ ShareChat.pdf
 # tsc incremental build artefact
 tsconfig.tsbuildinfo
 
+# Private interview-prep documents — kept locally, never committed
+docs/project-deep-dive.html
+Project_Deep_Dive.pdf
+
+
