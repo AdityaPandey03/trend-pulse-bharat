@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { CategoryPill } from '@/components/CategoryPill';
 import { HeatBar } from '@/components/HeatBar';
 import { SourceChips } from '@/components/SourceChips';
-import { CATEGORY_META, type RankedTrend, type TrendsResponse } from '@/lib/types';
+import type { RankedTrend, TrendsResponse } from '@/lib/types';
 
 interface DetailPayload {
   slug: string;
@@ -108,8 +108,6 @@ export default function TrendDetailPage() {
       </div>
     );
   }
-
-  const catMeta = CATEGORY_META[trend.category];
 
   return (
     <div className="pt-safe pb-safe min-h-screen">
@@ -287,30 +285,35 @@ export default function TrendDetailPage() {
           )}
         </motion.section>
 
-        {/* Mock related content — signals "this is where feed content would go" */}
-        <motion.section
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-        >
-          <div className="flex items-center justify-between mb-2">
-            <div className="font-hindi text-sm font-semibold text-white">इस ट्रेंड पर पोस्ट्स</div>
-            <div className="text-[10px] text-sc-muted">coming soon</div>
-          </div>
-          <div className="grid grid-cols-3 gap-2">
-            {[0, 1, 2, 3, 4, 5].map(i => (
-              <div
-                key={i}
-                className="aspect-[3/4] rounded-lg bg-gradient-to-br from-sc-surface to-sc-surfaceHi border border-sc-line flex items-center justify-center"
-              >
-                <span className="text-2xl opacity-30" aria-hidden="true">{catMeta.emoji}</span>
-              </div>
-            ))}
-          </div>
-          <div className="text-center text-[10px] text-sc-muted mt-3 font-hindi leading-relaxed">
-            असली ShareChat में यहाँ इस टैग से जुड़े वीडियो और पोस्ट्स दिखेंगे
-          </div>
-        </motion.section>
+        {/* Related coverage — real news articles that fed this cluster */}
+        {trend.relatedArticles && trend.relatedArticles.length > 0 && (
+          <motion.section
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+          >
+            <div className="flex items-center justify-between mb-2">
+              <div className="font-hindi text-sm font-semibold text-white">संबंधित खबरें</div>
+              <div className="text-[10px] text-sc-muted uppercase tracking-wider">Related coverage</div>
+            </div>
+            <div className="space-y-2">
+              {trend.relatedArticles.map((a, i) => (
+                <a
+                  key={i}
+                  href={a.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="tap-press block bg-sc-surface hover:bg-sc-surfaceHi border border-sc-line rounded-xl p-3"
+                >
+                  <div className="text-[10px] text-sc-muted uppercase tracking-wider mb-1">
+                    {a.publisher}
+                  </div>
+                  <div className="text-sm text-white leading-snug line-clamp-2">{a.title}</div>
+                </a>
+              ))}
+            </div>
+          </motion.section>
+        )}
 
         {/* Back link */}
         <Link

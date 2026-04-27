@@ -1,4 +1,4 @@
-import type { RawTrend, RankedTrend, TrendsResponse, SourceName } from './types';
+import type { RawTrend, RankedTrend, RelatedArticle, TrendsResponse, SourceName } from './types';
 import { fetchGoogleTrends } from './sources/google-trends';
 import { fetchNews } from './sources/news-rss';
 import { fetchRedditIndia } from './sources/reddit-india';
@@ -89,6 +89,18 @@ export async function runPipeline(): Promise<TrendsResponse> {
     const { cluster, members, scoreComponents: score } = s;
     const primaryUrl = members.find(m => m.url)?.url;
     const heat = Math.round(score.total * 100);
+    // Pick up to 3 distinct news articles for the "related coverage" section.
+    // Distinct by URL so we don't repeat the same story twice.
+    const seenUrls = new Set<string>();
+    const relatedArticles: RelatedArticle[] = [];
+    for (const m of members) {
+      if (m.source !== 'news_rss' || !m.url || !m.title) continue;
+      if (seenUrls.has(m.url)) continue;
+      seenUrls.add(m.url);
+      const publisher = typeof m.meta?.feed === 'string' ? m.meta.feed : 'News';
+      relatedArticles.push({ title: m.title, url: m.url, publisher });
+      if (relatedArticles.length >= 3) break;
+    }
     return {
       id: `tr_${i + 1}_${slugify(cluster.canonicalTitle).slice(0, 20)}`,
       rank: i + 1,
@@ -101,6 +113,7 @@ export async function runPipeline(): Promise<TrendsResponse> {
       sources: Array.from(new Set(members.map(m => m.source))) as SourceName[],
       approxPosts: estimateApproxPosts(members),
       primaryUrl,
+      relatedArticles: relatedArticles.length > 0 ? relatedArticles : undefined,
       slug: slugify(cluster.canonicalTitle),
       scoreBreakdown: {
         signal:      Number(score.signal.toFixed(3)),

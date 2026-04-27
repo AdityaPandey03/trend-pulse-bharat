@@ -81,6 +81,17 @@ export const CATEGORY_META: Record<Category, CategoryMeta> = {
 };
 
 /**
+ * A real news article that rolled into a trend cluster. Surfaced on the
+ * detail page as "related coverage" — turns the trend back into the
+ * underlying reporting.
+ */
+export interface RelatedArticle {
+  title: string;
+  url: string;
+  publisher: string; // e.g. "NDTV", "The Hindu"
+}
+
+/**
  * The final, enriched, ranked output. Exactly what the UI consumes.
  */
 export interface RankedTrend {
@@ -102,6 +113,8 @@ export interface RankedTrend {
   approxPosts?: number;
   // URL to the most relevant underlying news story, for the "read more" action.
   primaryUrl?: string;
+  // Up to 3 news articles that rolled into this cluster — shown as "related coverage".
+  relatedArticles?: RelatedArticle[];
   // Kept for debug / write-up — the score components breakdown.
   scoreBreakdown?: Record<string, number>;
   // URL-safe slug used in /trend/[slug] route.
