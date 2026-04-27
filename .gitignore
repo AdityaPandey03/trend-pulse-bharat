@@ -16,6 +16,7 @@ tsconfig.tsbuildinfo
 
 # Private interview-prep documents — kept locally, never committed
 docs/project-deep-dive.html
+docs/loom-script.md
 Project_Deep_Dive.pdf
 
 
