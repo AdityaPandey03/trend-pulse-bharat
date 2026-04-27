@@ -60,9 +60,15 @@ Rules you MUST follow:
    - tech (AI, apps, gadgets — only if genuinely trending in India)
    - sports_other (football, kabaddi, Olympics, non-cricket sports)
    - viral (memes, viral videos, social moments without a single news peg)
-5. HINDI HASHTAG format: no spaces, Devanagari script preferred. Example: "#भारतबनामऑस्ट्रेलिया".
-   For English-origin brand names that are widely used in English in India (Bollywood movie titles,
-   brand names), keep Latin script in hashtag: "#StrangerThings5" is fine.
+5. HINDI HASHTAG format: no spaces, Devanagari script REQUIRED. Example: "#भारतबनामऑस्ट्रेलिया".
+   Latin script is permitted ONLY for movie/show/song titles and product brand names that are
+   marketed in Latin script in India (e.g. "#StrangerThings5", "#Pushpa2", "#iPhone17", "#IPL2026").
+   Person names (actors, politicians, athletes), place names, event names, scams, elections, and
+   any common Hindi noun MUST be transliterated to Devanagari. Examples:
+     Deepika Padukone   -> #दीपिकापादुकोण   (NOT #DeepikaPadukone)
+     West Bengal elections -> #पश्चिमबंगालचुनाव (NOT #WestBengalElections)
+     Rose Valley scam   -> #रोज़वैलीघोटाला  (NOT #RoseValleyScam)
+   When in doubt, choose Devanagari. The Latin-script field already exists separately as hashtagEn.
 6. DESCRIPTION: one short line, under 80 chars, telling a Hindi user why this is trending.
 7. Return a JSON array. Nothing else. No markdown fences, no prose.
 
