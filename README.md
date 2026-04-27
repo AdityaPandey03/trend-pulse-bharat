@@ -11,7 +11,6 @@ A runtime system that surfaces what India is talking about *right now*, built fo
 </p>
 
 > 🔗 **Live demo:** https://trend-pulse-bharat.vercel.app
-> 🎥 **Loom walkthrough:** https://www.loom.com/share/d54047043b564145a4a4b17f7aa3467e
 > 📸 **Sample output:** [`docs/sample-response.json`](docs/sample-response.json) (backup in case prototype is down)
 > 📐 **Architecture diagram:** [`docs/architecture.svg`](docs/architecture.svg)
 
