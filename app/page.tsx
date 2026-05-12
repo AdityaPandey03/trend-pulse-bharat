@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { HeroCard } from '@/components/HeroCard';
 import { TrendCard } from '@/components/TrendCard';
 import { CategoryPill } from '@/components/CategoryPill';
+import { UtsavCalendar } from '@/components/UtsavCalendar';
 import { CATEGORY_META, type Category, type RankedTrend, type TrendsResponse } from '@/lib/types';
 
 type FilterKey = 'all' | Category;
@@ -157,6 +158,8 @@ export default function HomePage() {
                   <HeroCard trend={filtered[0]} />
                 </div>
               )}
+
+              {filter === 'all' && <UtsavCalendar />}
 
               <div className="space-y-2.5">
                 {(filter === 'all' ? filtered.slice(1) : filtered).map((t, i) => (
